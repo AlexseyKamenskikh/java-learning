@@ -1,6 +1,6 @@
-package ru.red;
+package ru.red.inheritance;
 
-public class JavaLearningMain {
+class RefDemo {
     public static void main(String[] args) {
     }
 }
