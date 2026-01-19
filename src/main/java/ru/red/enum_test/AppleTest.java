@@ -1,4 +1,4 @@
-package ru.red.thread_test.enum_test;
+package ru.red.enum_test;
 
 public enum AppleTest {
     JONATHAN,

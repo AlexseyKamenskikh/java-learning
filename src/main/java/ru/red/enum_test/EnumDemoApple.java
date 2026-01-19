@@ -1,4 +1,4 @@
-package ru.red.thread_test.enum_test;
+package ru.red.enum_test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
