@@ -13,17 +13,14 @@ public class CopyFile {
 
     public static void main(String[] args) {
         int i;
-        FileInputStream fin = null;
-        FileOutputStream fout = null;
-
         if (args.length != 2) {
 //            log.error("Не указаны исходный и целевой файл");
             return;
         }
 
-        try {
-            fin = new FileInputStream(args[0]);
-            fout = new FileOutputStream(args[1]);
+        try (FileInputStream fin = new FileInputStream(args[0]);
+             FileOutputStream fout = new FileOutputStream(args[1])) {
+
 
             do {
                 i = fin.read();
@@ -34,22 +31,6 @@ public class CopyFile {
 
         } catch (IOException e) {
 //            log.error("Ошибка ввода-вывода " + e.getMessage());
-        } finally {
-            try {
-                if (fin != null) {
-                    fin.close();
-                }
-            } catch (IOException e) {
-//                log.error("Ошибка при закрытии исходного файла " + e.getMessage());
-            }
-
-            try {
-                if (fout != null);
-                fout.close();
-            } catch (IOException e) {
-//                log.error("Ошибка при закрытии целевого файла " + e.getMessage());
-            }
-
         }
     }
 }
