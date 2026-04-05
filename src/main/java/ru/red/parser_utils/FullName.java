@@ -1,18 +1,20 @@
 package ru.red.parser_utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 // DTO для хранения ФИО
 public record FullName(String lastName, String firstName, String middleName) {
 
     public boolean hasLastName() {
-        return lastName != null && !lastName.isEmpty();
+        return StringUtils.isNotBlank(lastName);
     }
 
     public boolean hasFirstName() {
-        return firstName != null && !firstName.isEmpty();
+        return StringUtils.isNotBlank(firstName);
     }
 
     public boolean hasMiddleName() {
-        return middleName != null && !middleName.isEmpty();
+        return StringUtils.isNotBlank(middleName);
     }
 
 
