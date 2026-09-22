@@ -1,9 +1,9 @@
 package ru.red.inheritance;
 
 class Box {
-    private double width;
-    private double height;
-    private double depth;
+    private Double width;
+    private Double height;
+    private Double depth;
 
     Box(Box box) {
         this.width = box.width;
@@ -12,18 +12,18 @@ class Box {
     }
 
     Box() {
-        this.width = -1;
-        this.height = -1;
-        this.depth = -1;
+        this.width = -1.0;
+        this.height = -1.0;
+        this.depth = -1.0;
     }
 
-    Box(double len) {
+    Box(Double len) {
         this.width = len;
         this.height = len;
         this.depth = len;
     }
 
-    public Box(double weight, double height, double depth) {
+    public Box(Double weight, Double height, Double depth) {
         this.width = weight;
         this.height = height;
         this.depth = depth;
@@ -56,5 +56,14 @@ class Box {
 
     void setDepth(double depth) {
         this.depth = depth;
+    }
+
+    @Override
+    public String toString() {
+        return "Box{" +
+                "width=" + width +
+                ", height=" + (height != null ? "'*****'" : "null") +
+                ", depth=" + depth +
+                '}';
     }
 }
